@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1,
+      p {
+        text-align: center;
+      }
+      button {
+        display: block;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <p style="font-size: 5rem;">&#8377;</p> -->
+    <h1>Total Amount</h1>
+    <p></p>
+    <button>Procced To Pay</button>
+    <script>
+      var h2 = localStorage.getItem("price");
+
+      var p = document.getElementsByTagName("p");
+
+      var totalAmount = localStorage.getItem("count") * h2;
+
+      p[0].textContent = "\u20B9" + totalAmount;
+      p[0].style.fontSize = "30px";
+
+      let count = 0;
+      var btn = document.getElementsByTagName("button");
+      btn[0].addEventListener("click", () => {
+        if (count == 0) {
+          var l1 = document.createElement("button");
+          document.body.appendChild(l1);
+          l1.innerText = "phonePay";
+          l1.style.listStyleType = "none";
+          l1.style.textAlign = "center";
+          l1.style.marginTop = "20px";
+          l1.addEventListener("click", () => {
+           amount=prompt('ENter amount')
+           if(amount == Math.floor(totalAmount))
+           {
+               alert('Congatulations your order placed')
+           }
+           else
+           {
+               prompt("please enter correct amount");
+           }
+          
+         });
+          var l1 = document.createElement("button");
+          document.body.appendChild(l1);
+          l1.innerText = "Paytm";
+          l1.style.listStyleType = "none";
+          l1.style.textAlign = "center";
+          l1.style.marginTop = "20px";
+          l1.addEventListener("click", () => {
+           
+            amount=prompt('ENter amount')
+            if(amount == Math.floor(totalAmount))
+            {
+                alert('Congatulations your order placed')
+            }
+            else
+            {
+                prompt("please enter correct amount");
+            }
+           
+          });
+
+          var l1 = document.createElement("button");
+          document.body.appendChild(l1);
+          l1.innerText = "Credit/Debit";
+          l1.style.listStyleType = "none";
+          l1.style.textAlign = "center";
+          l1.style.marginTop = "20px";
+          l1.addEventListener("click", () => {
+           amount=prompt('ENter amount')
+           if(amount == Math.floor(totalAmount))
+           {
+               alert('Congatulations your order placed')
+           }
+           else
+           {
+               prompt("please enter correct amount");
+           }
+          
+         });
+       
+        }
+        count++;
+      });
+    </script>
+  </body>
+</html>

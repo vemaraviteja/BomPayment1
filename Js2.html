@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div>
+    </div>
+    <div>
+    </div>
+    <div>
+        <!-- <img src="./Images/shirt3.webp" alt=""> -->
+    </div>
+    <script>
+        var a= localStorage.getItem("array");
+        var container= JSON.parse(a);
+        // console.log(container[15]["id"]);
+        
+
+
+        var d= document.getElementsByTagName("div");
+        d[0].style.border="2px solid red";
+        d[0].style.width="200px";
+        d[0].style.heigth="200px";
+        d[0].style.display="flex";
+        d[0].style.marginLeft="400px";
+        d[0].style.marginLeft="200px";
+        d[0].style.marginTop="100px"
+
+
+        var imgg = document.createElement("img");
+        document.body.appendChild(imgg);
+        d[0].appendChild(imgg);
+
+
+        var obj1 = localStorage.getItem("details");
+        obj2 = JSON.parse(obj1);
+        imgg.setAttribute("src",obj2["image"]);
+        imgg.style.width="200px";
+        imgg.style.heigth="200px";
+        console.log(obj2);
+
+
+
+        d[1].style.border="2px solid green";
+        d[1].style.width="700px";
+        d[1].style.display="flex";
+        d[1].style.justifyContent="space-around";
+        d[1].style.marginTop="150px";
+        d[1].style.marginLeft="100px";
+        
+        imgg1=document.createElement("img");
+        imgg1.setAttribute("src","./Images/shirt1.webp")
+        imgg1.style.width="200px";
+        imgg1.style.width="200px";
+        // imgg1.addEventListener("click",()=>{
+        //     imgg.setAttribute("src","./Images/charminar.jpg");
+        // })
+
+        imgg2=document.createElement("img");
+        imgg2.setAttribute("src","./Images/shirt2.jpg");
+        imgg2.style.width="200px";
+        imgg2.style.width="200px";
+        // imgg2.addEventListener("click",()=>{
+        //     imgg.setAttribute("src","./Images/secretarait.avif");
+
+        // })
+
+        imgg3=document.createElement("img");
+        imgg3.setAttribute("src","./Images/shirt3.webp");
+        imgg3.style.width="200px";
+        imgg3.style.width="200px";
+        // imgg3.addEventListener("click",()=>{
+        //     imgg.setAttribute("src","./Images/sangiTemple.jpg");
+        // })
+
+        d[1].appendChild(imgg1);
+        d[1].appendChild(imgg2);
+        d[1].appendChild(imgg3);
+
+
+        d[2].style.border="2px solid blue";
+        d[2].style.width="fit-content";
+        d[2].style.marginTop="-650px";
+        d[2].style.marginLeft="500px"
+        var hget1 = document.createElement("h1");
+        document.body.appendChild(hget1);
+        var hget2 = document.createElement("h1");
+        document.body.appendChild(hget2);
+        var hget3 = document.createElement("h1");
+        document.body.appendChild(hget3);
+        var hget4 = document.createElement("h1");
+        document.body.appendChild(hget4);
+
+        d[2].appendChild(hget1);
+        d[2].appendChild(hget2);
+        d[2].appendChild(hget3);
+        d[2].appendChild(hget4);
+        
+        hget1.innerText="id: "+obj2["id"];
+        hget2.innerText="category: "+obj2["category"];
+        hget3.innerText="Rating: "+obj2["rating"]["rate"];
+        hget4.innerText="price: "+obj2["price"];
+
+    
+        imgg1.addEventListener("click",()=>{
+            imgg.setAttribute("src","./Images/shirt1.webp");
+            hget1.innerText="id:"+container[15]["id"];
+            hget2.innerText="Category :"+container[15]["category"];
+            hget3.innerText="Rating   :"+container[15]["rating"]["rate"];
+            hget4.innerText="price    :"+container[15]["price"];  
+        })
+        
+
+        imgg2.addEventListener("click",()=>{
+            imgg.setAttribute("src","./Images/shirt2.jpg");
+            hget1.innerText="id:"+container[16]["id"];
+            hget2.innerText="Category :"+container[16]["category"];
+            hget3.innerText="Rating   :"+container[16]["rating"]["rate"];
+            hget4.innerText="price    :"+container[16]["price"];  
+
+        })
+
+        imgg3.addEventListener("click",()=>{
+            imgg.setAttribute("src","./Images/shirt3.webp");
+            hget1.innerText="id:"+container[19]["id"];
+            hget2.innerText="Category :"+container[19]["category"];
+            hget3.innerText="Rating   :"+container[19]["rating"]["rate"];
+            hget4.innerText="price    :"+container[19]["price"];  
+        })
+        
+
+        var price= obj2["price"];
+        btn= document.createElement("button");
+        document.body.appendChild(btn);
+        btn.innerText="+";
+        btn.style.marginLeft="500px";
+        btn.style.marginTop="20px"
+        btn.addEventListener("click",()=>{
+            howmany = prompt("enter quantity");
+            localStorage.setItem("count",howmany);
+            localStorage.setItem("price",price);
+            
+        })
+
+
+        btn= document.createElement("button");
+        document.body.appendChild(btn);
+        btn.innerText="Add to Cart";
+        btn.style.display="flex";
+        btn.style.marginLeft="470px";
+        btn.style.marginTop="10px"
+        btn.addEventListener("click",()=>{
+            window.location.assign("./Js3.html");
+
+        })
+
+
+    </script>
+</body>
+</html>
